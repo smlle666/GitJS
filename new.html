@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>It`s a TRAP</title>
+    <script>
+        var temp = {
+            Belarus: 10,
+            Russia: 9,
+            Ukraina: 12,
+            USA: 10,
+            Canada: 11
+        };
+        var q = 0;
+        var sum = 0;
+        for(var key in temp){
+            sum += temp[key];
+            q++;
+        }
+        var avg = sum / q;
+        alert(avg);
+        function max(m) {
+            return Math.max(...Object.values(m));
+        }
+        alert(max(temp));
+        function arithMul(...args) {
+            var mult = 1; 
+            var hasNumber = false;
+            for (let arg of args) { 
+                if (typeof arg == "number") { 
+                    hasNumber = true;
+                    mult *= arg;
+                }
+            }
+            if (hasNumber) {
+                return mult;
+            }
+            else { 
+                throw("Need more numbers");
+            }
+        }
+        alert (arithMul(7, 2, 3, "one", "two"));
+    </script>
+</head>
+<body>
+    1.Создать объект со значениями температуры в стране. Реализовать код, который выведет среднее значение всех стран. 
+    Код должен работать с различным количеством температур в объекте.
+    Пример объекта:
+    /*var term = {
+       Canada: 10,
+       Germany: 13,
+       Spain: 22
+    };
+    
+    2.Создать функцию, которая принимает в качестве параметра объект term с температурами и возвращает максимальную температуру.
+            
+    3.Создать функцию arithMul(), в которой можно описать любое количество параметров разного типа и которая возвращает произведение этих параметров типа Number.
+    Если параметры типа Number отсутствуют, функция возвращает "Error!".
+</body>
+</html>
